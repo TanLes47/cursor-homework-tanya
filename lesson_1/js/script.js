@@ -23,7 +23,7 @@ const priceWithoutCoins = Math.trunc(jacketPrice) + Math.trunc(suitPrice) + Math
 console.log(priceWithoutCoins);
 
 //Виведіть суму товарів округлену до сотень.
-const sumClothesPrice = (Math.ceil(priceWithoutCoins/100) * 100); 
+const sumClothesPrice = (Math.floor(priceWithoutCoins/100) * 100); 
 console.log(sumClothesPrice); 
 
 //Виведіть булеве значення: чи є сума всіх товарів (округлена в меншу сторону) парним чи непарним числом?
