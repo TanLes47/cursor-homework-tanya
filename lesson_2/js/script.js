@@ -1,38 +1,34 @@
-let number1 = 0;
-let number2 = 0;
-let sumNumbers = 0;
+let firstInputedNumber = 0;
+let nextInputedNumber = 0;
+let sum = 0;
 
 do {
-    number1 = +prompt('Введіть будь-ласка число N ', ' ');
+    firstInputedNumber = +prompt('Введіть будь-ласка число N ', ' ');
 } while 
-    (!Number.isInteger(number1) || isNaN(number1) || number1 === '');
+    (!Number.isInteger(firstInputedNumber) || isNaN(firstInputedNumber) || firstInputedNumber === '');
     
 do {
-    number2 = +prompt('Введіть будь-ласка число M ', ' ');
+    nextInputedNumber = +prompt('Введіть будь-ласка число M ', ' ');
 } while 
-    (!Number.isInteger(number2) || isNaN(number2) || number2 === '');
+    (!Number.isInteger(nextInputedNumber) || isNaN(nextInputedNumber) || nextInputedNumber === '');
 
-const skipEvenNumbers = confirm("Пропустити парні числа?");
-console.log(skipEvenNumbers);
+const skip = confirm('Пропускати парні числа?');
+console.log(skip);
 
-let minNumber = Math.min(number1, number2);
-let maxNumber = Math.max(number1, number2);
-for (minNumber; minNumber <= maxNumber; minNumber ++ ) {
-        if(skipEvenNumbers && minNumber % 2 == 0) {
-            continue;
-        }
-        else {
-            sumNumbers = sumNumbers + minNumber;
-        }
-        console.log(sumNumbers);
-}
+for(let i = firstInputedNumber; i <= nextInputedNumber; i++){
+    if (skip && i % 2 ===0){
+    continue; 
+   }
+   sum = sum + i;
+   } 
+console.log(sum);
 
 document.querySelector( '.program' ).innerHTML =(` 
 <ul>Отриманий результат:
-    <li>Вивести перше число N = ${ number1 } </li>
-    <li>Вивести наступне число M = ${ number2 } </li>
-    <li>Пропустити парні числа = ${ skipEvenNumbers } </li>
-    <li>Сума чисел = ${ sumNumbers } </li>
+    <li>Вивести перше число N = ${ firstInputedNumber } </li>
+    <li>Вивести наступне число M = ${ nextInputedNumber } </li>
+    <li>Пропустити парні числа = ${ skip } </li>
+    <li>Сума чисел = ${ sum } </li>
 </ul>
  `)
 
