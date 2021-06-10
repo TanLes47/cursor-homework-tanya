@@ -15,7 +15,10 @@ do {
 const skip = confirm('Пропускати парні числа?');
 console.log(skip);
 
-for(let i = firstInputedNumber; i <= nextInputedNumber; i++){
+const minNumber = Math.min(firstInputedNumber, nextInputedNumber);
+const maxNumber = Math.max(firstInputedNumber, nextInputedNumber);
+
+for(let i = minNumber; i <= maxNumber; i++){
     if (skip && i % 2 ===0){
     continue; 
    }
