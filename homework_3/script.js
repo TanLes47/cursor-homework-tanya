@@ -1,13 +1,5 @@
 //Функція №1
-function getMaxDigit(number) {
-    number = Math.abs(number);
-    let arrDigits = number.toString().split(".").join("");
-    let arrNumber = [];
-    for (i = 0; i < arrDigits.length; i++) {
-      arrNumber.push(+arrDigits[i]);
-    }
-    return Math.max(...arrNumber);
-}
+const getMaxDigit = number => Math.max(...Array.from(String(number)).map((item) => parseInt(item))); 
 
 //Функція №2
 function getNumberDegree(number, pow) {
@@ -55,16 +47,18 @@ function countLetter(letter, word){
 }
 
 //Функція №7.
-function convertCurrency(value) {
-  let checkValue = value.toLowerCase() 
-  if (checkValue.includes("uah")) { 
-      let convertedMoney = Number(checkValue.split('uah').filter(Boolean).join('')) / 25; 
-      return `${convertedMoney}$`;
-  } else if (checkValue.includes("$")) { 
-      let convertedMoney = Number(checkValue.split('$').filter(Boolean).join('')) * 25; 
-      return `${convertedMoney}грн`;
-  } else { return `Помилка! Введіть конвертовану валюту.` } 
+function convertCurrency(value, currencyType) {
+  let checkValue = currencyType.toLowerCase();
+  if(checkValue.includes("uah") )
+      return value % 25;
+    else if (checkValue.includes("$"))
+      return value * 25;
+    else
+      return -1;
 }
+
+let result = convertCurrency(100, "$");
+console.log( ( result !== -1) ? result : "Помилка! Введіть конвертовану валюту.");
 
 //Функція №8
 function generatePassword(length) {
@@ -94,13 +88,8 @@ const deleteLettersByReplace = (letter, word) => {
 function isPalyndrom(enteredWords) {
     let newWords = enteredWords.replace(/[\s.,%]/g, '').split('').join('').toLowerCase();
     let reverseWords = enteredWords.replace(/[\s.,%]/g, '').split('').reverse().join('').toLowerCase();
-    if (newWords === reverseWords) {
-        return  true;
-    }
-    else {
-        return false;
-    }
-  }
+    return (newWords === reverseWords) ?  true :  false;
+}
 
 //Функція №11
 function deleteDuplicateLetter(sentence) {
@@ -115,13 +104,13 @@ function deleteDuplicateLetter(sentence) {
 
 document.writeln(`
 <ol>
-<li>Функція №1: ${ getMaxDigit(456987) }</li>
+<li>Функція №1: ${ getMaxDigit(9671) }</li>
 <li>Функція №2: ${ getNumberDegree(-2, 5) }</li>
 <li>Функція №3: ${ UpperCase('sOLOmiya') }</li>
 <li>Функція №4: ${ netSalary( 1000, 19.5) }</li>
 <li>Функція №5: ${ getRandomNumber(-88, 988) }</li>
 <li>Функція №6: ${ countLetter('о', 'колосок' ) }</li>
-<li>Функція №7: ${ convertCurrency('2500UAH') }</li>
+<li>Функція №7: ${ (result !== -1) ? result : "Помилка! Введіть конвертовану валюту." }</li>
 <li>Функція №8: ${ generatePassword(8)}</li>
 <li>Функція №9: ${ deleteLettersByArr('к', 'крокодил') }</li>
 <li>Функція №10: ${ isPalyndrom('я, н%е ,су гусеня') }</li>
