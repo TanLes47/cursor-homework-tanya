@@ -15,8 +15,7 @@ document.querySelector(".btn-1").addEventListener("click", () => {
     const endValue = Math.max(maxNumber, minNumber);
     
     for (let i = 0; i < length; i++) {
-    randomArray.push(
-    Math.trunc(startValue + Math.random() * (endValue - startValue))
+    randomArray.push(Math.trunc(startValue + Math.random() * (endValue - startValue))
         );
     }
     outputs[0].innerHTML = `Масив в діапазоні від ${startValue} до ${endValue}: ${randomArray}`;
