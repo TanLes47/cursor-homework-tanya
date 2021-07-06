@@ -53,7 +53,7 @@ class Students {
 class BudgetStudent extends Students{
     constructor(university, course, fullName, marks, status){
        super (university, course, fullName, marks, status);
-       setInterval(this.getScholarship, 3000);
+       setInterval(this.getScholarship, 30000);
 
 } 
 getScholarship = () => {

@@ -10,6 +10,7 @@ function  getPairs(students) {
         [students[1], students[3]],
         [students[4], students[5]],
     ];
+    document.getElementById("students").innerHTML = "Поділ студентів на пари";
 } 
 
 const pairs = getPairs(students);
@@ -51,26 +52,25 @@ const pairsThemesMarks = setPairsThemesMarks(pairs);
 console.log(pairsThemesMarks);
 
 document.querySelector(".projects").innerHTML = `
-<ul>1.Поділ студентів на пари:
+    <ul>1.Поділ студентів на пари:
     <li>${ pairs[0] }</li>
     <li>${ pairs[1] }</li>
     <li>${ pairs[2] }</li>
 </ul>
 <ul>2.Зіставлення пар та тем проектів:
-    <li>${ pairsThemes[0] }</li>
+   <li>${ pairsThemes[0] }</li>
     <li>${ pairsThemes[1] }</li>
-    <li>${ pairsThemes[2] }</li>
 </ul>
     <ul>3.Оцінки студентів:
-    <li>${ studentsMarks[0] }</li>
+   <li>${ studentsMarks[0] }</li>
     <li>${ studentsMarks[1] }</li>
     <li>${ studentsMarks[2] }</li>
     <li>${ studentsMarks[3] }</li>
-    <li>${ studentsMarks[4] }</li>
+   <li>${ studentsMarks[4] }</li>
     <li>${ studentsMarks[5] }</li>
 </ul>
 <ul>4.Випадкова оцінка(від 1 до 5) кожній парі за проєкт:
     <li>${ pairsThemesMarks[0] }</li>
-    <li>${ pairsThemesMarks[1] }</li>
+   <li>${ pairsThemesMarks[1] }</li>
     <li>${ pairsThemesMarks[2] }</li>
 </ul>`
