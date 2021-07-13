@@ -14,12 +14,13 @@ h1 {
   font-size: 5rem;
   text-align: center;
   color: blue;
+  padding: 90px;
 }
 
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 60vh;
   align-items: center;
   justify-content: center;
 }
@@ -30,7 +31,7 @@ h1 {
   margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem .5rem;
-  transition: all .2s ease; 
+  transition: all .3s ease; 
   width: 12rem;
   height: 8rem;
   text-align: center;
@@ -41,8 +42,8 @@ h1 {
 
 .playing {
   transform: scale(1.1);
-  border-color: #13ee84;
-  box-shadow: 0 0 1rem hsl(355, 89%, 46%);
+  border-color: #52fdab;
+  box-shadow: 0 0 1rem coral;
 }
 
 kbd {
