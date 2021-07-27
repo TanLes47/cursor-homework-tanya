@@ -17,7 +17,7 @@ async function getRandomChinese(length) {
         resolve (string);
         reject (string);
         i++;
-        }, 50);        
+        }, i*50);        
     });
     chineseString = chineseString + await randomChinese;   
     }
